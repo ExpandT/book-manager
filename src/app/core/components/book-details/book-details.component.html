@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{ book.title }}</h2>
+<mat-dialog-content>
+  <p><strong>Author:</strong> {{ book.author }}</p>
+  <p><strong>Year:</strong> {{ book.year }}</p>
+  <p><strong>Description:</strong> {{ book.description }}</p>
+  @if (book.coverImage) {
+    <img class="book-cover" [src]="book.coverImage" alt="Book cover">
+  }
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+</mat-dialog-actions>

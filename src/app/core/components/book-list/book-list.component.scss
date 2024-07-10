@@ -1,0 +1,55 @@
+
+.container {
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: center;
+
+  .add-book-btn {
+    margin-left: 8px;
+    margin-top: 8px;
+  }
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .book-container {
+    .book {
+      margin-right: 8px;
+
+      img {
+        height: 320px;
+        width: 210px;
+        object-fit: cover;
+      }
+
+      .book-info {
+        p {
+          text-align: center;
+          margin-top: 4px;
+          margin-bottom: 4px;
+        }
+
+        span {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .book-actions {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

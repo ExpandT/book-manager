@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{ data ? 'Edit Book' : 'Add Book' }}</h2>
+<mat-dialog-content [formGroup]="bookForm">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput formControlName="author">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input matInput type="number" formControlName="year">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Cover Image URL</mat-label>
+    <input matInput formControlName="coverImage">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()" [disabled]="!bookForm.valid">Save</button>
+</mat-dialog-actions>

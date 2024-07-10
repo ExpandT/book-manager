@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+    Book Manager
+  </div>
+  <div class="sub-header">
+    <form [formGroup]="searchForm" class="search-bar">
+      <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput formControlName="searchTerm" placeholder="Search">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" class="add-book-btn" (click)="addBook()">Add Book</button>
+  </div>
+
+  <div class="book-list" [@listAnimation]>
+    @for (book of books$ | async; track book) {
+      <div class="book-container">
+        <div class="book" (click)="viewBookDetails(book)">
+          <img [src]="book?.coverImage" alt="Book Cover">
+          <div class="book-info">
+            <p>{{book.title}}</p>
+            <span>{{book.author}} ({{book.year}})</span>
+          </div>
+        </div>
+        <div class="book-actions">
+          <button mat-icon-button color="accent" (click)="editBook(book)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteBook(book.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
